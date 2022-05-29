@@ -37,9 +37,11 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
+    // @ts-ignore
     <Stack.Navigator>
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+      {/*@ts-ignore*/}
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
       </Stack.Group>
@@ -57,6 +59,7 @@ function BottomTabNavigator() {
   const colorScheme = useColorScheme();
 
   return (
+    // @ts-ignore
     <BottomTab.Navigator
       initialRouteName="TabOne"
       screenOptions={{
@@ -74,6 +77,7 @@ function BottomTabNavigator() {
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
               })}>
+              {/*@ts-ignore*/}
               <FontAwesome
                 name="info-circle"
                 size={25}
@@ -103,5 +107,6 @@ function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
   color: string;
 }) {
+  // @ts-ignore
   return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
 }
