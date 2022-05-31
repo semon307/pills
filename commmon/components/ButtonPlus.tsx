@@ -1,6 +1,6 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text } from 'react-native';
-import { Color } from '../styles';
+import { Color } from '../ui';
 
 type ButtonProps = {
   onPress: () => void;
@@ -12,7 +12,7 @@ export const ButtonPlus: React.FC<ButtonProps> = (props) => (
     onPress={props.onPress}
     style={{ ...styles.ButtonPlus, ...props.styles }}
   >
-    <Text style={styles.ButtonTexPlus}>+</Text>
+    <Text style={styles.ButtonTextPlus}>+</Text>
   </Pressable>
 )
 
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     elevation: 3,
     backgroundColor: Color.BASIC_BLUE,
   },
-  ButtonTexPlus: {
+  ButtonTextPlus: {
     fontSize: 50,
     fontWeight: '500',
     letterSpacing: 0.25,
